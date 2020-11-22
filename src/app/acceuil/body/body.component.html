@@ -1,0 +1,20 @@
+<body>
+    <header>
+      <div class="row h-100">
+        <div class="col-md-1"></div>
+        <div class="col-md-5"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4 my-auto">
+             <div *ngIf="message; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock><app-sign-in-form (openSignUP)="recieveMessage($event)" ></app-sign-in-form></ng-template>
+          <ng-template #elseBlock><app-sign-up-form (openSigIN)="recieveMessage($event)"></app-sign-up-form></ng-template>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+    </header>
+</body>    
+
+   
+
+    

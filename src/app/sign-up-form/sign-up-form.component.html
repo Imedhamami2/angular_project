@@ -1,0 +1,51 @@
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+           <input type="text" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkValue()">
+           <p>
+          {{messageErreur}}
+           </p>
+        </div>
+        <div class="form-group col-md-6">
+           <input type="text" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name">
+        </div>
+           <p>{{firstName}}</p>
+           <p>{{lastName}}</p>
+
+    </div>
+    <div class="form-row">
+       <div class="form-group col-md-6">
+         <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+       </div>
+       <div class="form-group col-md-6">
+         <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+       </div>
+    </div>
+    <div class="form-group">
+       <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+         <input type="text" class="form-control" id="inputCity" placeholder="City">
+      </div>
+      <div class="form-group col-md-4">
+         <select id="inputState" class="form-control" placehoder="State">
+         <option selected>Choose...</option>
+         <option>...</option>
+         </select>
+      </div>
+      <div class="form-group col-md-2">
+         <input type="text" class="form-control" id="inputZip" placeholder="Zip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">Check me out
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+    <div class="strike"><span>Or</span></div>
+    <button type="submit" class="btn btn-outline-primary btn-block" (click)="setSignUp()">Sign in</button>
+</form>

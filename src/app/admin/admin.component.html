@@ -1,0 +1,37 @@
+<app-header></app-header>
+<br><br>
+<h1><p style="color: brown;text-align: center;" >WELCOME TO PAGE ADMIN</p></h1>
+<hr>
+<body>
+    <header>
+      <div class="row h-100">
+        <div class="col-md-1"></div>
+        <div class="col-md-5"></div>
+        
+        <div class="col-md-4 my-auto">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        UserName
+                      <input type="text" class="form-control" name ="UserName" [(ngModel)]="UserName" placeholder="User name" (keyup)="checkValue()">
+                    <p>
+                      {{messageErreur}}
+                    </p>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    Password
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                </div>
+               
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button><br>
+                <a href="forget yor paasword" style="text-align: left ;">forget yor paasword?</a>
+              </form>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </header>
+    
+  </body>
