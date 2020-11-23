@@ -4,13 +4,9 @@ input,select{
     border-radius: 250px;
   }
   button{
-    display: inline-block;
-  border-radius: 250px;
-  border: 4px double #cccccc;
+    border-radius: 250px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
   }
   .strike {
     margin: 15px;

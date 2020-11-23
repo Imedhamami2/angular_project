@@ -6,33 +6,59 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./sign-up-form.component.css']
 })
 export class SignUpFormComponent implements OnInit {
-  firstName : string;
-  lastName :string;
-  zipCode: number;
+  
+  lastName :string; password :string; city :string; firstName : string; email : string;
+  
+  zipCode: string;
   signUp : boolean = true;
-  chekFirstName :boolean = true;
+  checkFirstName: boolean = true; checkCity: boolean = true; checkLastName: boolean = true; checkPass: boolean = true; checkZip: boolean = true; checkEmail: boolean = true;
+  
+  
   constructor() { }
   @Output() openSigIN = new EventEmitter<boolean>();
- 
 
 
   ngOnInit(): void {
   }
-  checkValue(){
-    let re = /^[A-Za-Z]+$/;
-    
-    if(re.test(this.firstName))
-        this.chekFirstName=true;
+  checkText(){
+    let re = /^[A-Za-z]+$/;
+        if(re.test(this.firstName) || this.firstName.length==0)
+          this.checkFirstName=true;
+        else
+          this.checkFirstName=false;
+
+        if(re.test(this.lastName) || this.lastName.length==0) 
+          this.checkLastName=true;
+        else
+          this.checkLastName=false;
+
+        if(re.test(this.city) || this.city.length==0)
+          this.checkCity=true;
+        else
+          this.checkCity=false;  
+  }
+  checkNumber(){
+    let number = new RegExp(/^[0-9]+$/);
+    if(number.test(this.zipCode) || this.zipCode.length==0)
+      this.checkZip=true;
     else
-        this.chekFirstName=false;
-      
-      
-        }
+      this.checkZip=false;
+  }
+  checkEmailFn(){
+    let email = new RegExp(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/);
+    if(email.test(this.email) || this.email.length==0 )
+          this.checkEmail=true;
+        else
+          this.checkEmail=false;
+  }
+  checkPassword(){
+    if(this.password.length>=6 || this.password.length==0 )
+          this.checkPass=true;
+        else
+          this.checkPass=false; 
+  }
         setSignUp(){
-          
           this.openSigIN.emit(this.signUp);
-      
-      
         }
 
 
