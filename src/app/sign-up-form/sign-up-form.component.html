@@ -1,19 +1,22 @@
 <form>
     <div class="form-row">
         <div class="form-group col-md-6">
-           <input type="text" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkValue()">
+           <input type="text" aria-describedby="FirstNameHelp" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkText()">
+           <small *ngIf="!checkFirstName" id="FirstNameHelp">First name must contain only letters</small>
         </div>
         <div class="form-group col-md-6">
-           <input type="text" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name" (keyup)="checkValue()">
+           <input type="text" aria-describedby="LastNameHelp" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name" (keyup)="checkText()">
+           <small *ngIf="!checkLastName" id="LastNameHelp">LastName must contain only letters</small>
         </div>
-
     </div>
     <div class="form-row">
        <div class="form-group col-md-6">
-         <input type="email" [ngStyle]="checkEmail?{'border': 'none'} : {'border': '1px dashed red'}" name ="email" [(ngModel)]="email" (keyup)="checkValue()" class="form-control" id="inputEmail4" placeholder="Email">
+         <input type="email" aria-describedby="emailHelp" [ngStyle]="checkEmail?{'border': 'none'} : {'border': '1px dashed red'}" name ="email" [(ngModel)]="email" (keyup)="checkEmailFn()" class="form-control" id="inputEmail4" placeholder="Email">
+         <small *ngIf="!checkEmail" id="emailHelp">Please enter a valid email</small>
        </div>
        <div class="form-group col-md-6">
-         <input type="password" [ngStyle]="checkPass?{'border': 'none'} : {'border': '1px dashed red'}" name ="password" [(ngModel)]="password" (keyup)="checkValue()" class="form-control" id="inputPassword4" placeholder="Password">
+         <input type="password" aria-describedby="passwordHelp" [ngStyle]="checkPass?{'border': 'none'} : {'border': '1px dashed red'}" name ="password" [(ngModel)]="password" (keyup)="checkPassword()" class="form-control" id="inputPassword4" placeholder="Password">
+         <small *ngIf="!checkPass" id="passwordHelp">Password must be more than 6 characters</small>
        </div>
     </div>
     <div class="form-group">
@@ -21,7 +24,9 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-         <input type="text" [ngStyle]="checkCity?{'border': 'none'} : {'border': '1px dashed red'}" name ="city" [(ngModel)]="city" (keyup)="checkValue()" class="form-control" id="inputCity" placeholder="City" >
+         <input type="text" aria-describedby="cityHelp" [ngStyle]="checkCity?{'border': 'none'} : {'border': '1px dashed red'}" name ="city" [(ngModel)]="city" (keyup)="checkText()" class="form-control" id="inputCity" placeholder="City" >
+         <small *ngIf="!checkCity" id="cityHelp">City must contain only letters</small>
+         <small *ngIf="!checkZip" id="zipHelp">Zip must contain only numbers</small>
       </div>
       <div class="form-group col-md-4">
          <select id="inputState" class="form-control" placehoder="State">
@@ -30,13 +35,13 @@
          </select>
       </div>
       <div class="form-group col-md-2">
-         <input type="text" [ngStyle]="checkZip?{'border': 'none'} : {'border': '1px dashed red'}" name ="zipCode" [(ngModel)]="zipCode" (keyup)="checkValue()" class="form-control" id="inputZip" placeholder="Zip">
+         <input type="text" aria-describedby="zipHelp" [ngStyle]="checkZip?{'border': 'none'} : {'border': '1px dashed red'}" name ="zipCode" [(ngModel)]="zipCode" (keyup)="checkNumber()" class="form-control" id="inputZip" placeholder="Zip">
       </div>
     </div>
     <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">Check me out
+        <label class="form-check-label" for="gridCheck">Accept terme
         </label>
       </div>
     </div>
