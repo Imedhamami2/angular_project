@@ -1,24 +1,19 @@
 <form>
     <div class="form-row">
         <div class="form-group col-md-6">
-           <input type="text" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkValue()">
-           <p>
-          {{messageErreur}}
-           </p>
+           <input type="text" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkValue()">
         </div>
         <div class="form-group col-md-6">
-           <input type="text" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name">
+           <input type="text" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name" (keyup)="checkValue()">
         </div>
-           <p>{{firstName}}</p>
-           <p>{{lastName}}</p>
 
     </div>
     <div class="form-row">
        <div class="form-group col-md-6">
-         <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+         <input type="email" [ngStyle]="checkEmail?{'border': 'none'} : {'border': '1px dashed red'}" name ="email" [(ngModel)]="email" (keyup)="checkValue()" class="form-control" id="inputEmail4" placeholder="Email">
        </div>
        <div class="form-group col-md-6">
-         <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+         <input type="password" [ngStyle]="checkPass?{'border': 'none'} : {'border': '1px dashed red'}" name ="password" [(ngModel)]="password" (keyup)="checkValue()" class="form-control" id="inputPassword4" placeholder="Password">
        </div>
     </div>
     <div class="form-group">
@@ -26,7 +21,7 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-         <input type="text" class="form-control" id="inputCity" placeholder="City">
+         <input type="text" [ngStyle]="checkCity?{'border': 'none'} : {'border': '1px dashed red'}" name ="city" [(ngModel)]="city" (keyup)="checkValue()" class="form-control" id="inputCity" placeholder="City" >
       </div>
       <div class="form-group col-md-4">
          <select id="inputState" class="form-control" placehoder="State">
@@ -35,7 +30,7 @@
          </select>
       </div>
       <div class="form-group col-md-2">
-         <input type="text" class="form-control" id="inputZip" placeholder="Zip">
+         <input type="text" [ngStyle]="checkZip?{'border': 'none'} : {'border': '1px dashed red'}" name ="zipCode" [(ngModel)]="zipCode" (keyup)="checkValue()" class="form-control" id="inputZip" placeholder="Zip">
       </div>
     </div>
     <div class="form-group">
