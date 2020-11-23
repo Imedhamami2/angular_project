@@ -6,7 +6,7 @@
         </div>
         <div class="form-group col-md-6">
            <input type="text" aria-describedby="LastNameHelp" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name" (keyup)="checkText()">
-           <small *ngIf="!checkLastName" id="LastNameHelp">LastName must contain only letters</small>
+           <small *ngIf="!checkLastName" id="LastNameHelp">Last name must contain only letters</small>
         </div>
     </div>
     <div class="form-row">
