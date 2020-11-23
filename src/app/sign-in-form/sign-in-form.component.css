@@ -40,3 +40,7 @@ input,select{
     left: 100%;
     margin-left: 15px;
 }
+small{
+    color: red; margin: 5px;
+    font-size: x-small;
+  }
