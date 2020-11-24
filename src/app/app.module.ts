@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
+import { UserTableComponent } from './admin/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
     HeaderComponent,
     SignUpFormComponent,
     SignInFormComponent,
+    UserTableComponent,
     
 
     
