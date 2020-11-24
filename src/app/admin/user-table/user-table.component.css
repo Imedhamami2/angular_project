@@ -2,7 +2,6 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    
     border-color: black;
     border: 3px;
   }
@@ -41,10 +40,9 @@ table {
   }
   th{
     font-family: sans-serif;
-border: thin solid #000000;
-
-text-align: center;
-background-color: #ececec;
+    border: thin solid #000000;
+    text-align: center;
+    background-color: #ececec;
   }
   
   

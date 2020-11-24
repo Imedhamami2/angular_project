@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTableComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+

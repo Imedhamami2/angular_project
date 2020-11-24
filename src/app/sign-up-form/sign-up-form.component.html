@@ -1,21 +1,21 @@
 <form>
     <div class="form-row">
         <div class="form-group col-md-6">
-           <input type="text" aria-describedby="FirstNameHelp" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="firstName" placeholder="First name" (keyup)="checkText()">
+           <input type="text" aria-describedby="FirstNameHelp" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="currentUser.firstName" placeholder="First name" (keyup)="checkText()">
            <small *ngIf="!checkFirstName" id="FirstNameHelp">First name must contain only letters</small>
         </div>
         <div class="form-group col-md-6">
-           <input type="text" aria-describedby="LastNameHelp" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="lastName"  placeholder="Last name" (keyup)="checkText()">
+           <input type="text" aria-describedby="LastNameHelp" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="currentUser.lastName"  placeholder="Last name" (keyup)="checkText()">
            <small *ngIf="!checkLastName" id="LastNameHelp">Last name must contain only letters</small>
         </div>
     </div>
     <div class="form-row">
        <div class="form-group col-md-6">
-         <input type="email" aria-describedby="emailHelp" [ngStyle]="checkEmail?{'border': 'none'} : {'border': '1px dashed red'}" name ="email" [(ngModel)]="email" (keyup)="checkEmailFn()" class="form-control" id="inputEmail4" placeholder="Email">
+         <input type="email" aria-describedby="emailHelp" [ngStyle]="checkEmail?{'border': 'none'} : {'border': '1px dashed red'}" name ="email" [(ngModel)]="currentUser.email" (keyup)="checkEmailFn()" class="form-control" id="inputEmail4" placeholder="Email">
          <small *ngIf="!checkEmail" id="emailHelp">Please enter a valid email</small>
        </div>
        <div class="form-group col-md-6">
-         <input type="password" aria-describedby="passwordHelp" [ngStyle]="checkPass?{'border': 'none'} : {'border': '1px dashed red'}" name ="password" [(ngModel)]="password" (keyup)="checkPassword()" class="form-control" id="inputPassword4" placeholder="Password">
+         <input type="password" aria-describedby="passwordHelp" [ngStyle]="checkPass?{'border': 'none'} : {'border': '1px dashed red'}" name ="password" [(ngModel)]="currentUser.password" (keyup)="checkPassword()" class="form-control" id="inputPassword4" placeholder="Password">
          <small *ngIf="!checkPass" id="passwordHelp">Password must be more than 6 characters</small>
        </div>
     </div>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-         <input type="text" aria-describedby="cityHelp" [ngStyle]="checkCity?{'border': 'none'} : {'border': '1px dashed red'}" name ="city" [(ngModel)]="city" (keyup)="checkText()" class="form-control" id="inputCity" placeholder="City" >
+         <input type="text" aria-describedby="cityHelp" [ngStyle]="checkCity?{'border': 'none'} : {'border': '1px dashed red'}" name ="city" [(ngModel)]="currentUser.city" (keyup)="checkText()" class="form-control" id="inputCity" placeholder="City" >
          <small *ngIf="!checkCity" id="cityHelp">City must contain only letters</small>
          <small *ngIf="!checkZip" id="zipHelp">Zip must contain only numbers</small>
       </div>
@@ -35,7 +35,7 @@
          </select>
       </div>
       <div class="form-group col-md-2">
-         <input type="text" aria-describedby="zipHelp" [ngStyle]="checkZip?{'border': 'none'} : {'border': '1px dashed red'}" name ="zipCode" [(ngModel)]="zipCode" (keyup)="checkNumber()" class="form-control" id="inputZip" placeholder="Zip">
+         <input type="text" aria-describedby="zipHelp" [ngStyle]="checkZip?{'border': 'none'} : {'border': '1px dashed red'}" name ="zipCode" [(ngModel)]="currentUser.zipCode" (keyup)="checkNumber()" class="form-control" id="inputZip" placeholder="Zip">
       </div>
     </div>
     <div class="form-group">

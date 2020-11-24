@@ -5,11 +5,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.css']
 })
-export class SignUpFormComponent implements OnInit {
+export class SignUpFormComponent implements OnInit{
   
-  lastName :string; password :string; city :string; firstName : string; email : string;
+  currentUser: UserInformation = {lastName :'', password :'', city :'', firstName : '', email : '',zipCode: ''};
   
-  zipCode: string;
   signUp : boolean = true;
   checkFirstName: boolean = true; checkCity: boolean = true; checkLastName: boolean = true; checkPass: boolean = true; checkZip: boolean = true; checkEmail: boolean = true;
   
@@ -22,44 +21,51 @@ export class SignUpFormComponent implements OnInit {
   }
   checkText(){
     let re = /^[A-Za-z]+$/;
-        if(re.test(this.firstName) || this.firstName.length==0)
+        if(re.test(this.currentUser.firstName) || this.currentUser.firstName.length==0)
           this.checkFirstName=true;
         else
           this.checkFirstName=false;
 
-        if(re.test(this.lastName) || this.lastName.length==0) 
+        if(re.test(this.currentUser.lastName) || this.currentUser.lastName.length==0) 
           this.checkLastName=true;
         else
           this.checkLastName=false;
 
-        if(re.test(this.city) || this.city.length==0)
+        if(re.test(this.currentUser.city) || this.currentUser.city.length==0)
           this.checkCity=true;
         else
           this.checkCity=false;  
   }
   checkNumber(){
     let number = new RegExp(/^[0-9]+$/);
-    if(number.test(this.zipCode) || this.zipCode.length==0)
+    if(number.test(this.currentUser.zipCode) || this.currentUser.zipCode.length==0)
       this.checkZip=true;
     else
       this.checkZip=false;
   }
   checkEmailFn(){
     let email = new RegExp(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/);
-    if(email.test(this.email) || this.email.length==0 )
+    if(email.test(this.currentUser.email) || this.currentUser.email.length==0 )
           this.checkEmail=true;
         else
           this.checkEmail=false;
   }
   checkPassword(){
-    if(this.password.length>=6 || this.password.length==0 )
+    if(this.currentUser.password.length>=6 || this.currentUser.password.length==0 )
           this.checkPass=true;
         else
           this.checkPass=false; 
   }
-        setSignUp(){
-          this.openSigIN.emit(this.signUp);
-        }
+  setSignUp(){
+    this.openSigIN.emit(this.signUp);
+  }
 
-
+}
+interface UserInformation{
+  lastName :string,
+  password :string,
+  city :string;
+  firstName : string,
+  email : string,
+  zipCode: string
 }
