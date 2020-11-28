@@ -1,10 +1,12 @@
 <form>
     <div class="form-row">
         <div class="form-group col-md-6">
+         
            <input type="text" aria-describedby="FirstNameHelp" [ngStyle]="checkFirstName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="firstName" [(ngModel)]="currentUser.firstName" placeholder="First name" (keyup)="checkText()">
            <small *ngIf="!checkFirstName" id="FirstNameHelp">First name must contain only letters</small>
         </div>
         <div class="form-group col-md-6">
+         
            <input type="text" aria-describedby="LastNameHelp" [ngStyle]="checkLastName?{'border': 'none'} : {'border': '1px dashed red'}" class="form-control" name ="lastName" [(ngModel)]="currentUser.lastName"  placeholder="Last name" (keyup)="checkText()">
            <small *ngIf="!checkLastName" id="LastNameHelp">Last name must contain only letters</small>
         </div>
