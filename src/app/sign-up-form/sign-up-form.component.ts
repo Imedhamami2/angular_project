@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SaveNewUserService } from './saveNewUser/save-new-user.service';
+import {user} from "./user"
 
 @Component({
   selector: 'app-sign-up-form',
@@ -7,18 +9,25 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SignUpFormComponent implements OnInit{
   
-  currentUser: UserInformation = {lastName :'', password :'', city :'', firstName : '', email : '',zipCode: ''};
+  currentUser: user = new user ("","","","","","","");
   
+  message:any ="no data added";
   signUp : boolean = true;
   checkFirstName: boolean = true; checkCity: boolean = true; checkLastName: boolean = true; checkPass: boolean = true; checkZip: boolean = true; checkEmail: boolean = true;
   
   
-  constructor() { }
+  constructor( private service:SaveNewUserService) { }
   @Output() openSigIN = new EventEmitter<boolean>();
 
 
   ngOnInit(): void {
   }
+
+  public registerNow(){
+   let resp = this.service.doRegistration(this.currentUser);
+   resp.subscribe((data)=>this.message=data);
+  }
+
   checkText(){
     let re = /^[A-Za-z]+$/;
         if(re.test(this.currentUser.firstName) || this.currentUser.firstName.length==0)
@@ -60,12 +69,4 @@ export class SignUpFormComponent implements OnInit{
     this.openSigIN.emit(this.signUp);
   }
 
-}
-interface UserInformation{
-  lastName :string,
-  password :string,
-  city :string;
-  firstName : string,
-  email : string,
-  zipCode: string
 }

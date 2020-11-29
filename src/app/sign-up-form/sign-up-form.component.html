@@ -1,4 +1,5 @@
 <form>
+    <div><h1>{{message}}</h1></div>
     <div class="form-row">
         <div class="form-group col-md-6">
          
@@ -22,7 +23,7 @@
        </div>
     </div>
     <div class="form-group">
-       <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+       <input type="text" class="form-control" id="inputAddress" placeholder="Address" name="adress" [(ngModel)]="currentUser.adress">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -47,7 +48,7 @@
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="registerNow()">Sign up</button>
     <div class="strike"><span>Or</span></div>
     <button type="submit" class="btn btn-outline-primary btn-block" (click)="setSignUp()">Sign in</button>
 </form>

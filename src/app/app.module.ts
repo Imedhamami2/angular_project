@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { UserTableComponent } from './admin/user-table/user-table.component';
+import { SaveNewUserService } from './sign-up-form/saveNewUser/save-new-user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,9 +41,10 @@ import { UserTableComponent } from './admin/user-table/user-table.component';
     MatInputModule,
     MatFormFieldModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SaveNewUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
