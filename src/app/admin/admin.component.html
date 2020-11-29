@@ -1,10 +1,15 @@
 <html>
+ 
+  <h1>{{valeurfils}}</h1>
   <body>
     <app-header></app-header>
      <div class="row h-100">
        <div class="col-md-1"></div>
        <div class="col-md-10 my-auto">
-         <app-user-table></app-user-table>
+         <app-user-table
+          [dataParent]="UserName"
+          (valeurFils)="readvaluefromchild($event)"
+          ></app-user-table>
        </div>
        <div class="col-md-1"></div>
      </div>
